@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:fresco="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <include layout="@layout/header"
+        android:id="@+id/header"/>
+    <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+        android:id="@+id/pdp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        app:strokeWidth="1dp"
+        app:strokeColor="@color/orange"
+        android:padding="10dp"
+        android:layout_below="@id/header"
+        app:cardCornerRadius="100dp">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/pdp_imageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:layout_gravity="center"
+            fresco:placeholderImage="@drawable/pdp" />
+
+    </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+    <TextView
+        android:id="@+id/userName"
+        android:layout_below="@id/pdp"
+        android:layout_centerHorizontal="true"
+        android:textColor="?attr/colorOnPrimary"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:layout_marginTop="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hamza Sajid"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/edite_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/userName"
+        android:layout_centerHorizontal="true"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="5dp"
+        android:backgroundTint="@android:color/transparent"
+        android:paddingVertical="5dp"
+        android:text="Edit Profile"
+        android:textColor="@color/orange"
+        android:textSize="15sp"
+        app:cornerRadius="5dp"
+        app:strokeColor="@color/orange"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_layout"
+        android:layout_below="@id/edite_btn"
+        app:tabTextAppearance="@style/CustomTabText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </com.google.android.material.tabs.TabLayout>
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/view_pager"
+        android:layout_below="@id/tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+
+</RelativeLayout>
